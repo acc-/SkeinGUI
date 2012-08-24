@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SkeinGUI</class>
+ <widget class="QMainWindow" name="SkeinGUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SkeinGUI 1.0</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>631</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="margin">
+      <number>0</number>
+     </property>
+     <property name="horizontalSpacing">
+      <number>6</number>
+     </property>
+     <item row="17" column="2">
+      <widget class="QLineEdit" name="firstLayerInfillSpeed">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Layers to</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="10">
+      <widget class="QLabel" name="label_44">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="label_60">
+       <property name="text">
+        <string>Extra shells - sparse</string>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="7">
+      <widget class="QToolButton" name="toolButton_15">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Travel Speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="2">
+      <widget class="QLineEdit" name="bridgesSpeedRatio">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0">
+      <widget class="QToolButton" name="toolButton_5">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="8">
+      <widget class="QLabel" name="label_3">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;/p&gt;&lt;p&gt;- FIll/Infill Solidity (ratio)&lt;br/&gt;&lt;br/&gt;Can be entered as a value (0.0 - 1.0) or a percentage with % sign at the end (eg. 35%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Infill solidity</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="10">
+      <widget class="QLabel" name="label_45">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="26" column="9">
+      <widget class="QLineEdit" name="centerY">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="0">
+      <widget class="QToolButton" name="toolButton_7">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="1">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Bridges speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="2">
+      <widget class="QLineEdit" name="travelSpeed">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Layer Height (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="9">
+      <widget class="QLineEdit" name="centerX">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="1">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>First layer infill speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="2">
+      <widget class="QLineEdit" name="extraShellsSparse">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="8">
+      <widget class="QLabel" name="brimWidthText">
+       <property name="text">
+        <string>Brim width</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="2">
+      <widget class="QLineEdit" name="firstLayerPerimeterSpeed">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="7">
+      <widget class="QToolButton" name="toolButton_18">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>index</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="9">
+      <widget class="QLineEdit" name="skirtGap">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLineEdit" name="layerHeight">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_57">
+       <property name="text">
+        <string>Extra shells - alternating</string>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="8">
+      <widget class="QLabel" name="label_37">
+       <property name="text">
+        <string>Center Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="1">
+      <widget class="QLabel" name="label_40">
+       <property name="text">
+        <string>Multiply - columns</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QToolButton" name="toolButton_23">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve/Edge Width over Height (ratio)&lt;br/&gt;- Inset/Infill Widh over Thickness (ratio)&lt;/p&gt;&lt;p&gt;Sets the appropriate Skeinforge parameters by dividing entered value by layer height&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="21" column="0" colspan="11">
+      <widget class="Line" name="line_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QToolButton" name="toolButton">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve / Layer Height(mm)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="1">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Perimeters speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="9">
+      <widget class="QLineEdit" name="retractionExtraDistance">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="0">
+      <widget class="QToolButton" name="toolButton_24">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_58">
+       <property name="text">
+        <string>Extra shells - base</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="10">
+      <widget class="QLabel" name="label_53">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="7">
+      <widget class="QToolButton" name="toolButton_14">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="7">
+      <widget class="QToolButton" name="toolButton_10">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="7">
+      <widget class="QToolButton" name="toolButton_20">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="10">
+      <widget class="QLabel" name="label_35">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="singleWallWidth">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="10">
+      <widget class="QLabel" name="label_43">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="9">
+      <widget class="QLineEdit" name="brimWidth">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QToolButton" name="toolButton_28">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="layersTo">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="2">
+      <widget class="QLineEdit" name="multiplyRows">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="8">
+      <widget class="QLabel" name="label_32">
+       <property name="text">
+        <string>Retraction speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="10">
+      <widget class="QLabel" name="label_42">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QToolButton" name="toolButton_19">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="8">
+      <widget class="QLabel" name="label_52">
+       <property name="text">
+        <string>Retraction extra distance</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="7">
+      <widget class="QToolButton" name="toolButton_25">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="3">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="9">
+      <widget class="QLineEdit" name="retractionSpeed">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_49">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="8">
+      <widget class="QLabel" name="skirtGapText">
+       <property name="text">
+        <string>Gap over perimeter width</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Printing speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="1">
+      <widget class="QLabel" name="label_22">
+       <property name="text">
+        <string>First layer perimeter speed</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="2">
+      <widget class="QLineEdit" name="printingSpeed">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="7">
+      <widget class="QToolButton" name="toolButton_21">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="8">
+      <widget class="QCheckBox" name="convexSkirt">
+       <property name="text">
+        <string>Convex skirt</string>
+       </property>
+       <property name="tristate">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="25" column="0">
+      <widget class="QToolButton" name="toolButton_12">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="8">
+      <widget class="QLabel" name="label_51">
+       <property name="text">
+        <string>Retraction distance</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QToolButton" name="toolButton_4">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="0">
+      <widget class="QToolButton" name="toolButton_13">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <widget class="QToolButton" name="toolButton_3">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QToolButton" name="toolButton_16">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve / Layer Height(mm)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QLineEdit" name="extraShellsBase">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="3">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="7">
+      <widget class="QToolButton" name="toolButton_11">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_48">
+       <property name="text">
+        <string>Filament diameter</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0" colspan="11">
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="10">
+      <widget class="QLabel" name="label_54">
+       <property name="text">
+        <string>mm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="2">
+      <widget class="QLineEdit" name="perimetersSpeedRatio">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="3">
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>mm/s</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QToolButton" name="toolButton_2">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve/Edge Width over Height (ratio)&lt;br/&gt;- Inset/Infill Widh over Thickness (ratio)&lt;/p&gt;&lt;p&gt;Sets the appropriate Skeinforge parameters by dividing entered value by layer height&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QToolButton" name="toolButton_17">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="2">
+      <widget class="QLineEdit" name="multiplyColumns">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="7">
+      <widget class="QToolButton" name="toolButton_26">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="11">
+      <widget class="Line" name="line_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="0">
+      <widget class="QToolButton" name="toolButton_6">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="26" column="1">
+      <widget class="QLabel" name="label_39">
+       <property name="text">
+        <string>Multiply - rows</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="3">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>mm/s</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Single wall width</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QToolButton" name="toolButton_27">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLineEdit" name="extraShellsAlternating">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="3">
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="25" column="8">
+      <widget class="QLabel" name="label_36">
+       <property name="text">
+        <string>Center X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="7">
+      <widget class="QToolButton" name="toolButton_22">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="10">
+      <widget class="QLabel" name="label_31">
+       <property name="text">
+        <string>mm/s</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="9">
+      <widget class="QLineEdit" name="retractionDistance">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="filamentDiameter">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="10">
+      <widget class="QLabel" name="label_34">
+       <property name="text">
+        <string>deg</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="3">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="9">
+      <widget class="QLineEdit" name="infillSolidity">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QCheckBox" name="clip">
+       <property name="text">
+        <string>Clip over perimeter width</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QToolButton" name="toolButton_29">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="2">
+      <widget class="QLineEdit" name="clipOverPerimeter">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="3">
+      <widget class="QLabel" name="label_46">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="8">
+      <widget class="QCheckBox" name="jitter">
+       <property name="text">
+        <string>Jitter/perimeter width</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="9">
+      <widget class="QLineEdit" name="jitterPerimeterWidth">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="7">
+      <widget class="QToolButton" name="toolButton_30">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="7">
+      <widget class="QToolButton" name="toolButton_31">
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="8">
+      <widget class="QCheckBox" name="stretch">
+       <property name="text">
+        <string>Activate Stretch</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="10">
+      <widget class="QLabel" name="label_47">
+       <property name="text">
+        <string>ratio</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="8">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>Infill begin rotation</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="8">
+      <widget class="QLabel" name="label_33">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;/p&gt;&lt;p&gt;- FIll/Infill Solidity (ratio)&lt;br/&gt;&lt;br/&gt;Can be entered as a value (0.0 - 1.0) or a percentage with % sign at the end (eg. 35%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Infill perimeter overlap</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="9">
+      <widget class="QLineEdit" name="infillBeginRotation">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="9">
+      <widget class="QLineEdit" name="infillPerimeterOverlap">
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_28">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>271</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>.skeinforge directory path</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="skeinforgeDir">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>471</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_26">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>451</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Skeinforge command for skeinforge_utilities/skeinforge_craft.py</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="skeinforgeCommand">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>631</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="saveButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>191</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Push settings to Skeinforge</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="selectAndLoadButton">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>30</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select and load</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sliceButton">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>560</y>
+      <width>111</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Slice STL</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exportButton">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>560</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Export</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="importButton">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>560</y>
+      <width>80</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Import</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>skeinforgeDir</tabstop>
+  <tabstop>selectAndLoadButton</tabstop>
+  <tabstop>skeinforgeCommand</tabstop>
+  <tabstop>layerHeight</tabstop>
+  <tabstop>filamentDiameter</tabstop>
+  <tabstop>singleWallWidth</tabstop>
+  <tabstop>layersTo</tabstop>
+  <tabstop>infillSolidity</tabstop>
+  <tabstop>infillBeginRotation</tabstop>
+  <tabstop>infillPerimeterOverlap</tabstop>
+  <tabstop>extraShellsAlternating</tabstop>
+  <tabstop>extraShellsBase</tabstop>
+  <tabstop>extraShellsSparse</tabstop>
+  <tabstop>clipOverPerimeter</tabstop>
+  <tabstop>convexSkirt</tabstop>
+  <tabstop>skirtGap</tabstop>
+  <tabstop>brimWidth</tabstop>
+  <tabstop>travelSpeed</tabstop>
+  <tabstop>printingSpeed</tabstop>
+  <tabstop>perimetersSpeedRatio</tabstop>
+  <tabstop>bridgesSpeedRatio</tabstop>
+  <tabstop>firstLayerInfillSpeed</tabstop>
+  <tabstop>firstLayerPerimeterSpeed</tabstop>
+  <tabstop>retractionSpeed</tabstop>
+  <tabstop>retractionDistance</tabstop>
+  <tabstop>retractionExtraDistance</tabstop>
+  <tabstop>jitter</tabstop>
+  <tabstop>jitterPerimeterWidth</tabstop>
+  <tabstop>stretch</tabstop>
+  <tabstop>multiplyColumns</tabstop>
+  <tabstop>multiplyRows</tabstop>
+  <tabstop>centerX</tabstop>
+  <tabstop>centerY</tabstop>
+  <tabstop>saveButton</tabstop>
+  <tabstop>sliceButton</tabstop>
+  <tabstop>toolButton_3</tabstop>
+  <tabstop>toolButton_11</tabstop>
+  <tabstop>toolButton_13</tabstop>
+  <tabstop>toolButton_20</tabstop>
+  <tabstop>toolButton_22</tabstop>
+  <tabstop>toolButton_23</tabstop>
+  <tabstop>toolButton_12</tabstop>
+  <tabstop>toolButton_15</tabstop>
+  <tabstop>toolButton_2</tabstop>
+  <tabstop>toolButton</tabstop>
+  <tabstop>toolButton_16</tabstop>
+  <tabstop>toolButton_25</tabstop>
+  <tabstop>toolButton_26</tabstop>
+  <tabstop>toolButton_27</tabstop>
+  <tabstop>toolButton_28</tabstop>
+  <tabstop>toolButton_24</tabstop>
+  <tabstop>toolButton_21</tabstop>
+  <tabstop>toolButton_7</tabstop>
+  <tabstop>toolButton_18</tabstop>
+  <tabstop>toolButton_6</tabstop>
+  <tabstop>toolButton_14</tabstop>
+  <tabstop>clip</tabstop>
+  <tabstop>toolButton_19</tabstop>
+  <tabstop>toolButton_29</tabstop>
+  <tabstop>toolButton_10</tabstop>
+  <tabstop>toolButton_17</tabstop>
+  <tabstop>toolButton_30</tabstop>
+  <tabstop>toolButton_31</tabstop>
+  <tabstop>toolButton_5</tabstop>
+  <tabstop>toolButton_4</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
