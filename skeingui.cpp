@@ -1,11 +1,12 @@
+using namespace std;
+#include <iostream>
+
 #include "skeingui.h"
 #include "ui_skeingui.h"
 #include "skeinforgesettings.h"
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QProcess>
-
-
 
 
 SkeinGUI::SkeinGUI(QWidget *parent) :
@@ -220,6 +221,7 @@ void SkeinGUI::on_exportButton_clicked()
             exp.set(item.csv->getModule()+"|"+item.key, item.checkbox->isChecked() ? "True" : "False");
 
     }
+    exp.set(KEY_UI_SINGLE_WALL_WIDTH, ui->singleWallWidth->text());
 
     exp.save(path);
     QMessageBox::information(this, "SkeinGUI", "Settings exported");
@@ -242,7 +244,7 @@ void SkeinGUI::on_importButton_clicked()
         QString val = (vals.size() > 1) ? vals[1] : "";
 
         for (int j=0; j<uiItems.size(); j++) {
-            SettingItem item = uiItems[i];
+            SettingItem item = uiItems[j];
             if (item.csv->getModule()+"|"+item.key == key) {
                 if (item.line != NULL)
                     item.line->setText(val);
@@ -253,5 +255,6 @@ void SkeinGUI::on_importButton_clicked()
             }
         }
     }
+    ui->singleWallWidth->setText(exp.get(KEY_UI_SINGLE_WALL_WIDTH));
     QMessageBox::information(this, "SkeinGUI", "Settings imported, remember to push them to Skeinforge before slicing");
 }
