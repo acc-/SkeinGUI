@@ -11,18 +11,25 @@ using namespace std;
 
 SkeinGUI::SkeinGUI(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::SkeinGUI)
+    ui(new Ui::SkeinGUI), settings("SkeinGUI")
 {
     ui->setupUi(this);
-    loadSettings();
+
+    CSV::setSkeinforgeDir(QDir::homePath() + "/.skeinforge");
+    loadAppSettings();
+    loadSkeinforgeSettings();
 }
+
 
 SkeinGUI::~SkeinGUI()
 {
+    saveAppSettings();
     delete ui;
 }
 
 
+
+// helper functions to calculate single wall width
 QString mul(QString v1, QString v2) {
     if (v1.isEmpty() || v2.isEmpty())
         return "";
@@ -33,6 +40,7 @@ QString mul(QString v1, QString v2) {
     return s;
 }
 
+
 QString div(QString v1, QString v2) {
 
     QString s;
@@ -42,14 +50,9 @@ QString div(QString v1, QString v2) {
 }
 
 
-void SkeinGUI::loadSettings() {
-    settings.load("skeingui.ini", "./");
-    ui->skeinforgeCommand->setText(settings.get(KEY_SETTINGS_SKEINFORGE_COMMAND));
-
-    loadSkeinforgeSettings(settings.get(KEY_SETTINGS_SKEINFORGE_DIR));
-}
 
 
+// helper functions to register UI 1:1 .csv <-> settings
 void SkeinGUI::s(QLineEdit* line, CSV* csv, QString key) {
     line->setText(csv->get(key));
 
@@ -65,24 +68,31 @@ void SkeinGUI::s(QCheckBox* cb, CSV* csv, QString key) {
 }
 
 
-void SkeinGUI::loadSkeinforgeSettings(QString dir) {
-    ui->skeinforgeDir->setText(dir);
-    settings.setSkeinforgeDir(dir);
 
-    carve.loadSkeinforge("carve.csv");
-    dimension.loadSkeinforge("dimension.csv");
-    fill.loadSkeinforge("fill.csv");
-    inset.loadSkeinforge("inset.csv");
-    skirt.loadSkeinforge("skirt.csv");
-    speed.loadSkeinforge("speed.csv");
-    multiply.loadSkeinforge("multiply.csv");
-    clip.loadSkeinforge("clip.csv");
-    jitter.loadSkeinforge("jitter.csv");
-    stretch.loadSkeinforge("stretch.csv");
+// load app settings
+void SkeinGUI::loadAppSettings() {
+    ui->craftCommand->setText(settings.value(KEY_SETTINGS_CRAFT_COMMAND,"pypy PATH/TO/SKEINFORGE/skeinforge_utilities/skeinforge_craft.py").toString());
+    ui->skeinlayerCommand->setText(settings.value(KEY_SETTINGS_SKEINLAYER_COMMAND,"python PATH/TO/SKEINFORGE/skeinforge_plugins/analyze_plugins/skeinlayer.py").toString());
+}
+
+
+// load skeinforge settings
+void SkeinGUI::loadSkeinforgeSettings() {
+    carve.load("carve.csv");
+    dimension.load("dimension.csv");
+    fill.load("fill.csv");
+    inset.load("inset.csv");
+    skirt.load("skirt.csv");
+    speed.load("speed.csv");
+    multiply.load("multiply.csv");
+    clip.load("clip.csv");
+    jitter.load("jitter.csv");
+    stretch.load("stretch.csv");
 
     ui->layerHeight->setFocus();
 
     uiItems.clear();
+
     s(ui->layerHeight, &carve, KEY_CARVE_LAYER_HEIGHT_MM);
     s(ui->filamentDiameter, &dimension, KEY_DIMENSION_FILAMENT_DIAMETER_MM);
     ui->singleWallWidth->setText(mul(carve.get(KEY_CARVE_LAYER_HEIGHT_MM), carve.get(KEY_CARVE_EDGE_WIDTH_OVER_HEIGHT_RATIO)));
@@ -124,30 +134,19 @@ void SkeinGUI::loadSkeinforgeSettings(QString dir) {
     s(ui->centerY, &multiply, KEY_MULTIPLY_CENTER_Y_MM);
 }
 
-// saves SkeinGUI settings
-void SkeinGUI::saveSettings() {
-    settings.set(KEY_SETTINGS_SKEINFORGE_DIR, ui->skeinforgeDir->text());
-    settings.set(KEY_SETTINGS_SKEINFORGE_COMMAND, ui->skeinforgeCommand->text());
 
-    settings.save();
-}
-
-void SkeinGUI::on_selectAndLoadButton_clicked()
-{
-    QString path = QFileDialog::getExistingDirectory(this, "Select .skeinforge directory", ui->skeinforgeDir->text());
-    if (path.isNull())
-        return;
-
-    loadSkeinforgeSettings(path);
+// save SkeinGUI settings
+void SkeinGUI::saveAppSettings() {
+    settings.setValue(KEY_SETTINGS_CRAFT_COMMAND, ui->craftCommand->text());
+    settings.setValue(KEY_SETTINGS_SKEINLAYER_COMMAND, ui->skeinlayerCommand->text());
+    settings.sync();
 }
 
 
 // action on "push settings to skeinforge" button
 // saves SkeinGUI settings and pushes data to skeinforge
-void SkeinGUI::on_saveButton_clicked()
+void SkeinGUI::saveSkeinforgeSettings()
 {
-    saveSettings();
-
     // dump UI settings to CSVs - these are direct ones
     for (int i=0; i<uiItems.size(); i++) {
         SettingItem item = uiItems[i];
@@ -165,7 +164,7 @@ void SkeinGUI::on_saveButton_clicked()
     carve.set(KEY_CARVE_EDGE_WIDTH_OVER_HEIGHT_RATIO, wtRatio);
     inset.set(KEY_INSET_INFILL_WIDTH_OVER_THICKNESS_RATIO, wtRatio);
 
-    // and save these CVSs
+    // and save all these CVSs
     carve.save();
     dimension.save();
     fill.save();
@@ -176,35 +175,54 @@ void SkeinGUI::on_saveButton_clicked()
     clip.save();
     jitter.save();
     stretch.save();
-
-    QMessageBox::information(this, "SkeinGUI", "Settings pushed to " + ui->skeinforgeDir->text());
 }
 
 
-void SkeinGUI::on_sliceButton_clicked()
-{
-    QString path = QFileDialog::getOpenFileName(this, "Select .STL file to slice", settings.get(KEY_SETTINGS_LAST_STL_DIR), "STL files (*.stl)");
-    if (path.isNull())
-        return;
+// extract directory from full file path (working both on Windows and Unixes)
+QString dirOf(QString filename) {
+    int idx = filename.lastIndexOf('/');
+    int i2 = filename.lastIndexOf('\\');
 
-    int idx = path.lastIndexOf('/');
-    int i2 = path.lastIndexOf('\\');
     if (i2 > idx)
         idx = i2;
 
-    if (idx >= 0) {
-        QString stlPath = path.left(idx);
-        settings.set(KEY_SETTINGS_LAST_STL_DIR, stlPath);
-        settings.save();
-    }
+    if (idx >= 0)
+        return  filename.left(idx);
+    else
+        return "";
+}
 
-    QString cmd = ui->skeinforgeCommand->text() + " " + path;
+
+
+// slice stl
+void SkeinGUI::on_sliceButton_clicked()
+{
+    QString path = QFileDialog::getOpenFileName(this, "Select STL file to slice", settings.value(KEY_SETTINGS_LAST_STL_DIR,"").toString(), "STL files (*.stl)");
+    if (path.isNull())
+        return;
+
+    saveSkeinforgeSettings();
+    settings.setValue(KEY_SETTINGS_LAST_STL_DIR, dirOf(path));
+
+    QString cmd = ui->craftCommand->text() + " " + path;
+    QProcess::startDetached(cmd);
+}
+
+
+// skeinlayer - view generated .gcode
+void SkeinGUI::on_skeinlayerButton_clicked()
+{
+    QString path = QFileDialog::getOpenFileName(this, "Select gcode file to slice", settings.value(KEY_SETTINGS_LAST_STL_DIR,"").toString(), "G-code files (*.g *.gcode)");
+    if (path.isNull())
+        return;
+
+    QString cmd = ui->skeinlayerCommand->text() + " " + path;
 
     QProcess::startDetached(cmd);
 }
 
 
-
+// export skeinforge settings (all the UI input fields)
 void SkeinGUI::on_exportButton_clicked()
 {
     QString path = QFileDialog::getSaveFileName(this, "Select config file", ".", "SkeinGUI config files (*.sg)");
@@ -212,7 +230,12 @@ void SkeinGUI::on_exportButton_clicked()
     if (path.isNull())
         return;
 
+    if (path.endsWith(".sg") == false)
+        path += ".sg";
+
+
     CSV exp;
+    // take all registered .csv <-> ui settings
     for (int i=0; i<uiItems.size(); i++) {
         SettingItem item = uiItems[i];
         if (item.line != NULL)
@@ -221,13 +244,18 @@ void SkeinGUI::on_exportButton_clicked()
             exp.set(item.csv->getModule()+"|"+item.key, item.checkbox->isChecked() ? "True" : "False");
 
     }
-    exp.set(KEY_UI_SINGLE_WALL_WIDTH, ui->singleWallWidth->text());
 
-    exp.save(path);
-    QMessageBox::information(this, "SkeinGUI", "Settings exported");
+    // and manually handled ones as well
+    exp.set(KEY_UI_SINGLE_WALL_WIDTH, ui->singleWallWidth->text());
+    exp.setFilename(path);
+    exp.save();
+
+    QMessageBox::information(this, "SkeinGUI", "Settings exported to " + path);
 }
 
 
+
+// import skeinforge settings (all the UI input fields)
 void SkeinGUI::on_importButton_clicked()
 {
     QString path = QFileDialog::getOpenFileName(this, "Select config file", ".", "SkeinGUI config files (*.sg)");
@@ -236,8 +264,11 @@ void SkeinGUI::on_importButton_clicked()
         return;
 
     CSV exp;
-    exp.load("", path);
 
+    exp.setFilename(path);
+    exp.load();
+
+    // load direct .csv <-> ui settings
     for (int i=0; i<exp.data.size(); i++) {
         QStringList vals = exp.data[i];
         QString key = vals[0];
@@ -255,6 +286,9 @@ void SkeinGUI::on_importButton_clicked()
             }
         }
     }
+    // and all the manually handled ones
     ui->singleWallWidth->setText(exp.get(KEY_UI_SINGLE_WALL_WIDTH));
-    QMessageBox::information(this, "SkeinGUI", "Settings imported, remember to push them to Skeinforge before slicing");
+
+    QMessageBox::information(this, "SkeinGUI", "Settings imported from " + path);
 }
+

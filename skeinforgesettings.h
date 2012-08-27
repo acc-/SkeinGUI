@@ -3,14 +3,15 @@
 
 #include <QString>
 
-const QString KEY_SETTINGS_SKEINFORGE_DIR = "SkeinforgeDir";
-const QString KEY_SETTINGS_SKEINFORGE_COMMAND = "SkeinforgeCommand";
+// app configuration keys
+const QString KEY_SETTINGS_CRAFT_COMMAND = "craft.py";
+const QString KEY_SETTINGS_SKEINLAYER_COMMAND = "skeinlayer.py";
+const QString KEY_SETTINGS_LAST_STL_DIR = "stl.dir";
 
-const QString KEY_SETTINGS_LAST_STL_DIR = "LastSTLFilesDirectory";
-
+// calculated Skeinforge settings keys
 const QString KEY_UI_SINGLE_WALL_WIDTH = "ui.Single Wall Width";
 
-
+// 1:1 Skeinforge settings keys
 const QString KEY_CARVE_ADD_LAYER_TEMPLATE_TO_SVG("Add Layer Template to SVG");
 const QString KEY_CARVE_EDGE_WIDTH_OVER_HEIGHT_RATIO("Edge Width over Height (ratio):");
 const QString KEY_CARVE_EXTRA_DECIMAL_PLACES_FLOAT("Extra Decimal Places (float):");

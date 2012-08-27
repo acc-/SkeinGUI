@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLineEdit>
 #include <QCheckBox>
+#include <QSettings>
 
 #include "csv.h"
 
@@ -13,6 +14,9 @@ class SkeinGUI;
 }
 
 
+
+// object representing UI <-> Skeinforge setting, the main goal of this class is to automate loading and saving settings
+// items are registered once, and then appropriate .csv keys and UI controls are linked together
 class SettingItem {
 public:
     QString key;
@@ -37,6 +41,9 @@ public:
     }
 };
 
+
+
+// Main application class
 class SkeinGUI : public QMainWindow
 {
     Q_OBJECT
@@ -44,25 +51,29 @@ class SkeinGUI : public QMainWindow
 public:
     explicit SkeinGUI(QWidget *parent = 0);
     ~SkeinGUI();
-    void loadSettings();
-    void saveSettings();
+
 
 private slots:
-    void on_selectAndLoadButton_clicked();
-    void loadSkeinforgeSettings(QString dir);
+    void loadAppSettings();
+    void loadSkeinforgeSettings();
 
-    void on_saveButton_clicked();
+    void saveAppSettings();
+    void saveSkeinforgeSettings();
+
     void on_sliceButton_clicked();
     void on_exportButton_clicked();
-
     void on_importButton_clicked();
+
+    void on_skeinlayerButton_clicked();
 
 private:
     Ui::SkeinGUI *ui;
-    CSV settings;
+    QSettings settings;
+
     CSV carve, dimension, fill, inset, skirt, speed, multiply, clip, jitter, stretch;
     QList<SettingItem> uiItems;
 
+    // methods to register .csv <-> ui parameters link
     void s(QLineEdit* line, CSV* csv, QString key);
     void s(QCheckBox* cb, CSV* csv, QString key);
 

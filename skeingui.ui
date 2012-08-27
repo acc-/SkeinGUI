@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>651</width>
-    <height>601</height>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>120</y>
+      <y>110</y>
       <width>631</width>
-      <height>431</height>
+      <height>441</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -861,29 +861,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_28">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>271</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>.skeinforge directory path</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="skeinforgeDir">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>471</width>
-      <height>25</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
@@ -894,10 +871,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Skeinforge command for skeinforge_utilities/skeinforge_craft.py</string>
+     <string>Command to launch skeinforge_plugins/analyze_plugins/skeinlayer.py</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="skeinforgeCommand">
+   <widget class="QLineEdit" name="skeinlayerCommand">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -910,36 +887,10 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="saveButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>560</y>
-      <width>191</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Push settings to Skeinforge</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="selectAndLoadButton">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>30</y>
-      <width>151</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select and load</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="sliceButton">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>10</x>
       <y>560</y>
       <width>111</width>
       <height>26</height>
@@ -975,13 +926,50 @@
      <string>Import</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="craftCommand">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>631</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_27">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>451</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Command to launch skeinforge_utilities/skeinforge_craft.py</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="skeinlayerButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>560</y>
+      <width>111</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Skeinlayer</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>skeinforgeDir</tabstop>
-  <tabstop>selectAndLoadButton</tabstop>
-  <tabstop>skeinforgeCommand</tabstop>
+  <tabstop>skeinlayerCommand</tabstop>
   <tabstop>layerHeight</tabstop>
   <tabstop>filamentDiameter</tabstop>
   <tabstop>singleWallWidth</tabstop>
@@ -1012,7 +1000,6 @@
   <tabstop>multiplyRows</tabstop>
   <tabstop>centerX</tabstop>
   <tabstop>centerY</tabstop>
-  <tabstop>saveButton</tabstop>
   <tabstop>sliceButton</tabstop>
   <tabstop>toolButton_3</tabstop>
   <tabstop>toolButton_11</tabstop>

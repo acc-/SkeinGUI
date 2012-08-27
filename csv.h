@@ -6,24 +6,39 @@
 #include <QString>
 #include <QStringList>
 
+
+// a class to handle skeinforge's .csv files
 class CSV
 {
 public:
-    CSV();
-    ~CSV();
-    QString getModule() { return module; }
+   ~CSV() {
+        data.clear();
+    }
 
-    void loadSkeinforge(QString module);
-    void load(QString module, QString dir);
+    CSV()  {
+    }
+
+    void static setSkeinforgeDir(QString dir) {
+        skeinforgeDir = dir;
+
+    }
+    void setFilename(QString filename) {
+        this->filename = filename;
+    }
+
+    void load(QString module);
+    void load();
     void save();
-    void save(QString fname);
+
     void dumpData();
 
     QString get(QString key);
     void set(QString key, QString value);
 
-    void setSkeinforgeDir(QString dir) { skeinforgeDir = dir; }
+    QString getModule() {
+        return module;}
 
+public:
     QList<QStringList> data;
 
 private:
@@ -31,7 +46,6 @@ private:
     static QString skeinforgeDir;
 
     QString makeKey(QString val);
-
 };
 
 #endif // CSV_H

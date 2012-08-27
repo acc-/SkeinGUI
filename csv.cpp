@@ -8,33 +8,23 @@ using namespace std;
 
 QString CSV::skeinforgeDir = "";
 
-CSV::CSV() {
-}
 
 
-CSV::~CSV() {
-    data.clear();
-}
 
-
-void CSV::loadSkeinforge(QString module) {
-    if (skeinforgeDir == "") {
-        cerr << "Skeinforge dir not set, skipping loading values for module " << module.toStdString() << endl;
-        return;
-    }
-    load(module, skeinforgeDir + "/profiles/extrusion/ABS/");
-}
-
-
-void CSV::load(QString module, QString dir) {
+// load skeinforge settings
+void CSV::load(QString module) {
     this->module = module;
-    this->filename = dir + module;
+    this->filename = skeinforgeDir + "/profiles/extrusion/ABS/" + module;
 
-    data.clear();
-    cout << "Reading settings for module " << module.toStdString() << " from " << filename.toStdString() << endl;
+    load();
+}
 
 
+void CSV::load() {
+    cout << "Reading settings from " << filename.toStdString();
     QFile file(filename);
+
+    data.clear(); // in case of reloading
 
     if (file.open(QIODevice::ReadOnly)) {
         QTextStream in(&file);
@@ -48,21 +38,21 @@ void CSV::load(QString module, QString dir) {
                 QStringList vals = line.split("\t");
                 data.append(vals);
             }
+            cout << '.';
         }
-        file.close();;
+        file.close();
+        cout << endl;
     } else
-        cerr << "File '" <<file.fileName().toStdString() << "' not found" << endl;
-
-    //dumpData();
+        cerr << "Cannot open file '" <<file.fileName().toStdString() << "' for reading" << endl;
 }
 
 
+
+// save settings
 void CSV::save() {
-    save(filename);
-}
+    cout << "Writing settings to " << filename.toStdString();
 
-void CSV::save(QString fname) {
-    QFile file(fname);
+    QFile file(filename);
 
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
@@ -74,20 +64,19 @@ void CSV::save(QString fname) {
                 out << vals.at(j);
                 if (j < vals.size()-1)
                     out << '\t';
-
-                //cout << vals.at(j).toStdString() << '\t';
             }
             out << endl;
-            //cout << endl;
+            cout << '.';
         }
         file.close();
-        cout << "Settings saved to " << file.fileName().toStdString() << endl;
+        cout << endl;
     } else
         cerr << "Cannot open file '" << file.fileName().toStdString() << "' for writing" << endl;
 
 }
 
 
+// helper method to generate C++ constant key name (like KEY_CARVE_LAYERS_TO_INDEX)
 QString CSV::makeKey(QString val) {
     QString tmp;
     QChar lastChar('_');
@@ -107,6 +96,8 @@ QString CSV::makeKey(QString val) {
     return QString("KEY_" + module.toUpper().replace(".CSV","")+"_"+tmp);
 }
 
+
+// dump data to console
 void CSV::dumpData() {
     for (int i=0; i<data.size(); i++) {
         QStringList l = data.at(i);
@@ -126,6 +117,7 @@ void CSV::dumpData() {
 }
 
 
+// retrieve setting
 QString CSV::get(QString key) {
     for (int i=0; i<data.size(); i++) {
         QStringList l = data.at(i);
@@ -140,9 +132,8 @@ QString CSV::get(QString key) {
 }
 
 
+// store setting
 void CSV::set(QString key, QString value) {
-//    cerr << "Setting [" << key.toStdString() << "] to [" << value.toStdString() << "]" << endl;
-
     for (int i=0; i<data.size(); i++) {
         QStringList l = data[i];
         if (key == l[0]) {
