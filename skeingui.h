@@ -20,14 +20,16 @@ class SkeinGUI;
 class SettingItem {
 public:
     QString key;
+    QString key2;
 
     CSV *csv;
     QLineEdit *line;
     QCheckBox *checkbox;
 
 public:
-    SettingItem(QString key, CSV *csv, QLineEdit *line) {
+    SettingItem(QString key, QString key2, CSV *csv, QLineEdit *line) {
         this->key = key;
+        this->key2 = key2;
         this->csv = csv;
         this->line = line;
         this->checkbox = NULL;
@@ -74,7 +76,7 @@ private:
     QList<SettingItem> uiItems;
 
     // methods to register .csv <-> ui parameters link
-    void s(QLineEdit* line, CSV* csv, QString key);
+    void s(QLineEdit* line, CSV* csv, QString key, QString key2="");
     void s(QCheckBox* cb, CSV* csv, QString key);
 
 };

@@ -73,6 +73,9 @@
      </item>
      <item row="26" column="7">
       <widget class="QToolButton" name="toolButton_15">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Multiply / Center Y (mm)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -94,6 +97,9 @@
      </item>
      <item row="15" column="0">
       <widget class="QToolButton" name="toolButton_5">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Perimeter Feed Rate Multiplier (ratio)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Perimeter Flow Rate Multiplier (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -101,9 +107,6 @@
      </item>
      <item row="0" column="8">
       <widget class="QLabel" name="label_3">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;/p&gt;&lt;p&gt;- FIll/Infill Solidity (ratio)&lt;br/&gt;&lt;br/&gt;Can be entered as a value (0.0 - 1.0) or a percentage with % sign at the end (eg. 35%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="text">
         <string>Infill solidity</string>
        </property>
@@ -138,6 +141,9 @@
      </item>
      <item row="17" column="0">
       <widget class="QToolButton" name="toolButton_7">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Object First Layer Feed Rate Infill Multiplier (ratio)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Object First Layer Flow Rate Infill Multiplier (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -166,9 +172,6 @@
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="text">
         <string>Layer Height (mm)</string>
        </property>
@@ -211,6 +214,9 @@
      </item>
      <item row="8" column="7">
       <widget class="QToolButton" name="toolButton_18">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Skirt / Convex&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Note - this doesn't influence &lt;span style=&quot; font-weight:600;&quot;&gt;Active Skirt&lt;/span&gt; checkbox&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -261,7 +267,7 @@
      <item row="3" column="0">
       <widget class="QToolButton" name="toolButton_23">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve/Edge Width over Height (ratio)&lt;br/&gt;- Inset/Infill Widh over Thickness (ratio)&lt;/p&gt;&lt;p&gt;Sets the appropriate Skeinforge parameters by dividing entered value by layer height&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Carve / Layers To (index)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
         <string>?</string>
@@ -278,7 +284,7 @@
      <item row="0" column="0">
       <widget class="QToolButton" name="toolButton">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve / Layer Height(mm)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Carve / Layer Height (mm)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
         <string>?</string>
@@ -301,6 +307,9 @@
      </item>
      <item row="18" column="0">
       <widget class="QToolButton" name="toolButton_24">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Object First Layer Feed Rate Perimeter Multiplier (ratio)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Object First Layer Flow Rate Perimeter Multiplier (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -322,6 +331,9 @@
      </item>
      <item row="25" column="7">
       <widget class="QToolButton" name="toolButton_14">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Multiply / Center X (mm)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -329,6 +341,9 @@
      </item>
      <item row="13" column="7">
       <widget class="QToolButton" name="toolButton_10">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Dimension / Extruder Retraction Speed (mm/s)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -336,6 +351,9 @@
      </item>
      <item row="2" column="7">
       <widget class="QToolButton" name="toolButton_20">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Infill Perimeter Overlap&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -371,6 +389,9 @@
      </item>
      <item row="10" column="0">
       <widget class="QToolButton" name="toolButton_28">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Extra Shells on Sparse Layers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -406,6 +427,9 @@
      </item>
      <item row="13" column="0">
       <widget class="QToolButton" name="toolButton_19">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Travel Feed Rate (mm/s)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -420,6 +444,9 @@
      </item>
      <item row="9" column="7">
       <widget class="QToolButton" name="toolButton_25">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Skirt / Gap Over Perimeter Width (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -476,6 +503,9 @@
      </item>
      <item row="14" column="7">
       <widget class="QToolButton" name="toolButton_21">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Dimension / Retraction Distance (milimeters)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -513,6 +543,9 @@
      </item>
      <item row="25" column="0">
       <widget class="QToolButton" name="toolButton_12">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Multiply / Number of Columns (integer)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -527,6 +560,9 @@
      </item>
      <item row="14" column="0">
       <widget class="QToolButton" name="toolButton_4">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Feed Rate (mm/s)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Flow Rate Setting (float)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -534,6 +570,9 @@
      </item>
      <item row="26" column="0">
       <widget class="QToolButton" name="toolButton_13">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Multiply / Number of Rows (integer)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -541,6 +580,9 @@
      </item>
      <item row="0" column="7">
       <widget class="QToolButton" name="toolButton_3">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Infill Solidity (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -549,7 +591,7 @@
      <item row="1" column="0">
       <widget class="QToolButton" name="toolButton_16">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve / Layer Height(mm)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Dimension / Filament Diameter (mm)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
         <string>?</string>
@@ -572,6 +614,9 @@
      </item>
      <item row="1" column="7">
       <widget class="QToolButton" name="toolButton_11">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Infill Begin Rotation (degrees)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -615,7 +660,7 @@
      <item row="2" column="0">
       <widget class="QToolButton" name="toolButton_2">
        <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- Carve/Edge Width over Height (ratio)&lt;br/&gt;- Inset/Infill Widh over Thickness (ratio)&lt;/p&gt;&lt;p&gt;Sets the appropriate Skeinforge parameters by dividing entered value by layer height&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Carve/Edge Width over Height (ratio)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Inset/Infill Widh over Thickness (ratio)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Sets the appropriate Skeinforge parameters by dividing entered &lt;span style=&quot; font-weight:600;&quot;&gt;single wall width&lt;/span&gt; by &lt;span style=&quot; font-weight:600;&quot;&gt;layer height&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="text">
         <string>?</string>
@@ -624,6 +669,9 @@
      </item>
      <item row="8" column="0">
       <widget class="QToolButton" name="toolButton_17">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Extra Shells on Alternating Solid Layers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -638,6 +686,9 @@
      </item>
      <item row="10" column="7">
       <widget class="QToolButton" name="toolButton_26">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Skirt / Brim Width&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Note - for &lt;span style=&quot; font-weight:600;&quot;&gt;brim&lt;/span&gt; feature you need modified &lt;span style=&quot; font-weight:600;&quot;&gt;skirt.py&lt;/span&gt; plugin modified by &lt;span style=&quot; font-weight:600;&quot;&gt;Theodleif&lt;/span&gt;, see &lt;a href=&quot;http://forums.reprap.org/read.php?1,136147,141573#msg-141573&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;his post&lt;/span&gt;&lt;/a&gt; at reprap forums&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -652,6 +703,9 @@
      </item>
      <item row="16" column="0">
       <widget class="QToolButton" name="toolButton_6">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Bridge Feed Rate Multiplier (ratio)&lt;/span&gt;&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Speed / Bridge Flow Rate Multiplier (ratio)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -673,9 +727,6 @@
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="label_2">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="text">
         <string>Single wall width</string>
        </property>
@@ -683,6 +734,9 @@
      </item>
      <item row="9" column="0">
       <widget class="QToolButton" name="toolButton_27">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Fill / Extra Shells on Base Layers&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -711,6 +765,9 @@
      </item>
      <item row="15" column="7">
       <widget class="QToolButton" name="toolButton_22">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Dimension / Retraction Extra Distance (milimeters)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -767,6 +824,9 @@
      </item>
      <item row="11" column="0">
       <widget class="QToolButton" name="toolButton_29">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Clip / Activate Clip&lt;br/&gt;&lt;/span&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Clip / Clip Over Perimeter Width&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Setting the checkbox controls activating &lt;span style=&quot; font-weight:600;&quot;&gt;Clip&lt;/span&gt; plugin in Skeinforge, so checked = plugin is active&lt;/p&gt;&lt;p&gt;Entered value is the Skeinforge parameter value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -802,6 +862,9 @@
      </item>
      <item row="17" column="7">
       <widget class="QToolButton" name="toolButton_30">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Jitter / Activate Jitter&lt;br/&gt;&lt;/span&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Jitter /Jitter Over Perimeter Width (ratio)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Setting the checkbox controls activating &lt;span style=&quot; font-weight:600;&quot;&gt;Clip&lt;/span&gt; plugin in Skeinforge, so checked = plugin is active&lt;br/&gt;&lt;br/&gt;Entered value is the Skeinforge parameter value&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -809,6 +872,9 @@
      </item>
      <item row="18" column="7">
       <widget class="QToolButton" name="toolButton_31">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;br/&gt;- &lt;span style=&quot; font-weight:600;&quot;&gt;Stretch / Activate Stretch&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
         <string>?</string>
        </property>
@@ -837,9 +903,6 @@
      </item>
      <item row="2" column="8">
       <widget class="QLabel" name="label_33">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Influences:&lt;/p&gt;&lt;p&gt;- FIll/Infill Solidity (ratio)&lt;br/&gt;&lt;br/&gt;Can be entered as a value (0.0 - 1.0) or a percentage with % sign at the end (eg. 35%)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
        <property name="text">
         <string>Infill perimeter overlap</string>
        </property>

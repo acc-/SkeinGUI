@@ -53,10 +53,10 @@ QString div(QString v1, QString v2) {
 
 
 // helper functions to register UI 1:1 .csv <-> settings
-void SkeinGUI::s(QLineEdit* line, CSV* csv, QString key) {
+void SkeinGUI::s(QLineEdit* line, CSV* csv, QString key, QString key2) {
     line->setText(csv->get(key));
 
-    SettingItem setting(key, csv, line);
+    SettingItem setting(key, key2, csv, line);
     uiItems.append(setting);
 }
 
@@ -112,12 +112,12 @@ void SkeinGUI::loadSkeinforgeSettings() {
     s(ui->clip, &clip, KEY_CLIP_ACTIVATE_CLIP);
     s(ui->clipOverPerimeter, &clip, KEY_CLIP_CLIP_OVER_PERIMETER_WIDTH_RATIO);
 
-    s(ui->printingSpeed, &speed, KEY_SPEED_FEED_RATE_MMS);
     s(ui->travelSpeed, &speed, KEY_SPEED_TRAVEL_FEED_RATE_MMS);
-    s(ui->perimetersSpeedRatio, &speed, KEY_SPEED_PERIMETER_FEED_RATE_MULTIPLIER_RATIO);
-    s(ui->bridgesSpeedRatio, &speed, KEY_SPEED_BRIDGE_FEED_RATE_MULTIPLIER_RATIO);
-    s(ui->firstLayerPerimeterSpeed, &speed, KEY_SPEED_OBJECT_FIRST_LAYER_FEED_RATE_PERIMETER_MULTIPLIER_RATIO);
-    s(ui->firstLayerInfillSpeed, &speed, KEY_SPEED_OBJECT_FIRST_LAYER_FEED_RATE_INFILL_MULTIPLIER_RATIO);
+    s(ui->printingSpeed, &speed, KEY_SPEED_FEED_RATE_MMS, KEY_SPEED_FLOW_RATE_SETTING_FLOAT);
+    s(ui->perimetersSpeedRatio, &speed, KEY_SPEED_PERIMETER_FEED_RATE_MULTIPLIER_RATIO, KEY_SPEED_PERIMETER_FLOW_RATE_MULTIPLIER_RATIO);
+    s(ui->bridgesSpeedRatio, &speed, KEY_SPEED_BRIDGE_FEED_RATE_MULTIPLIER_RATIO, KEY_SPEED_BRIDGE_FLOW_RATE_MULTIPLIER_RATIO);
+    s(ui->firstLayerPerimeterSpeed, &speed, KEY_SPEED_OBJECT_FIRST_LAYER_FEED_RATE_PERIMETER_MULTIPLIER_RATIO, KEY_SPEED_OBJECT_FIRST_LAYER_FLOW_RATE_PERIMETER_MULTIPLIER_RATIO);
+    s(ui->firstLayerInfillSpeed, &speed, KEY_SPEED_OBJECT_FIRST_LAYER_FEED_RATE_INFILL_MULTIPLIER_RATIO, KEY_SPEED_OBJECT_FIRST_LAYER_FLOW_RATE_INFILL_MULTIPLIER_RATIO);
 
     s(ui->retractionSpeed, &dimension, KEY_DIMENSION_EXTRUDER_RETRACTION_SPEED_MMS);
     s(ui->retractionDistance, &dimension, KEY_DIMENSION_RETRACTION_DISTANCE_MILLIMETERS);
@@ -157,6 +157,8 @@ void SkeinGUI::saveSkeinforgeSettings()
             val = item.checkbox->isChecked() ? "True" : "False";
 
         item.csv->set(item.key, val);
+        if (item.key2.isEmpty() == false)
+            item.csv->set(item.key2, val);
     }
 
     // calculate other values
