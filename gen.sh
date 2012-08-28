@@ -4,6 +4,7 @@
 echo "\033[32mBuilding Linux release...\033[0m"
 make clean >/dev/null 2>&1
 qmake
+rm SkeinGUI
 make -j 4
 if [ ! -f SkeinGUI ]; then
     echo "\033[31mLinux build failed\033[0m"
@@ -16,8 +17,9 @@ echo
 echo "\033[32mBuilding Windows release...\033[0m"
 make clean >/dev/null 2>&1
 qmake -spec win32-x-g++
+rm release/SkeinGUI.exe
 make -j 4
-if [ -f release/SkeinGUI1.exe ]; then
+if [ ! -f release/SkeinGUI.exe ]; then
     echo "\033[31mWindows build failed\033[0m"
     return
 fi
